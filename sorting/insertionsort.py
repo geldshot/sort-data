@@ -1,4 +1,4 @@
-from .sort import Sort
+from sort import Sort
 
 # Insertion sort is good for very small constratints. It's simple, 
 # builds the sorted list one step at a time, and really quick (to
