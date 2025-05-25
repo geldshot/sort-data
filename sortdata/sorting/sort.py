@@ -11,7 +11,7 @@ class Sort():
             comparator = kwargs["comparator"]
 
         if "reverse" in kwargs and kwargs["reverse"]:
-            comparator = lambda a, b: -comparator(a, b)
+            comparator = (lambda a, b: -comparator(a, b))
 
         return self._sort(array, comparator)
 
