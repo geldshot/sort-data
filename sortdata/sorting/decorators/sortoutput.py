@@ -1,5 +1,5 @@
 from functools import wraps
-from insertionsort import InsertionSort
+from ..insertionsort import InsertionSort
 
 def sortOutput(func):
     @wraps(func)

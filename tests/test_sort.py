@@ -1,5 +1,5 @@
 import unittest
-from sorting.sort import Sort
+from sortdata.sorting.sort import Sort
 
 # how to test classes that inherit
 # we have an interface and expected behavior for that interface

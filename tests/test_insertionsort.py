@@ -1,4 +1,4 @@
-from sorting.insertionsort import InsertionSort
+from sortdata.sorting.insertionsort import InsertionSort
 from test_sort import TestSort
 import unittest
 

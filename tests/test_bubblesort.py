@@ -1,6 +1,6 @@
 import unittest
 from test_sort import TestSort
-from sorting.bubblesort import BubbleSort
+from sortdata.sorting.bubblesort import BubbleSort
 
 class TestBubbleSort(TestSort):
     def setUp(self):

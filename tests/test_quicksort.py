@@ -1,6 +1,6 @@
 import unittest
 from test_sort import TestSort
-from sorting.quicksort import QuickSort
+from sortdata.sorting.quicksort import QuickSort
 
 class TestQuickSort(TestSort):
     def setUp(self):

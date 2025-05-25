@@ -1,5 +1,6 @@
-from decorators.sortoutput import sortOutput
+from sorting.decorators.sortoutput import sortOutput
 import random
+
 
 def main():
     data = generate_data(100)
