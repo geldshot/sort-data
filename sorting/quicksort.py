@@ -5,10 +5,10 @@ from .sort import Sort
 # left of the partition and then call sort on the partitions.
 
 class QuickSort(Sort):
-    def sort(self, array):
-        return self._sort(array, 0, len(array)-1)
+    def _sort(self, array, comparator):
+        return self.__qsort(array, 0, len(array)-1, comparator)
 
-    def _sort(self, arr, left, right):
+    def __qsort(self, arr, left, right, comparator):
         if left == right or not arr:
             return arr # an empty array or a single element is already sorted
 
@@ -17,7 +17,7 @@ class QuickSort(Sort):
         index = arr[right] # partition is assumed to be right
 
         while j < right:
-            if arr[j] < arr[right]:
+            if 0 > comparator(arr[j], arr[right]):
                 i += 1
                 self._swap(arr, i, j)
             j += 1
@@ -26,13 +26,8 @@ class QuickSort(Sort):
         self._swap(arr, i, right) # swap index into it's location
 
         if left < i-1:
-            self._sort(arr, left, i-1) # sort left
+            self.__qsort(arr, left, i-1, comparator) # sort left
         if i+1 < right:
-            self._sort(arr, i+1, right) # sort right
+            self.__qsort(arr, i+1, right, comparator) # sort right
 
         return arr
-
-    def _swap(self, arr, a, b):
-        hold = arr[a]
-        arr[a] = arr[b]
-        arr[b] = hold

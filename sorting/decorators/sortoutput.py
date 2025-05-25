@@ -9,3 +9,5 @@ def sortOutput(func):
         return sorter.sort(arr)
 
     return wrapper
+
+# so i need to put out type and comparator insertion

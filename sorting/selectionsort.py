@@ -1,7 +1,7 @@
 from .sort import Sort
 
 class SelectionSort(Sort):
-    def sort(self, arr):
+    def _sort(self, arr, comparator):
         if not arr or len(arr) <= 1:
             return arr
 
@@ -10,7 +10,7 @@ class SelectionSort(Sort):
             min = i
             j = i+1
             while j < len(arr):
-                if arr[j] < arr[min]:
+                if 0 > comparator(arr[j], arr[min]):
                     min = j
 
                 j += 1
@@ -18,8 +18,3 @@ class SelectionSort(Sort):
             i += 1
 
         return arr
-
-    def _swap(self, arr, a, b):
-        hold = arr[a]
-        arr[a] = arr[b]
-        arr[b] = hold

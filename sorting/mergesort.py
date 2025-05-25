@@ -6,18 +6,18 @@ from .sort import Sort
 
 class MergeSort(Sort):
 
-    def sort(self, arr):
+    def _sort(self, arr, comparator):
         if not arr or len(arr) <= 1:
             return arr
 
         middle = len(arr)//2
 
-        left = self.sort(arr[:middle])
-        right = self.sort(arr[middle:])
+        left = self._sort(arr[:middle], comparator)
+        right = self._sort(arr[middle:], comparator)
         stitch = []
 
         while left and right:
-            if left[0] < right[0]:
+            if 0 > comparator(left[0], right[0]):
                 stitch.append(left.pop(0))
             else:
                 stitch.append(right.pop(0))
